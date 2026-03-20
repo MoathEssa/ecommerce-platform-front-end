@@ -2,6 +2,8 @@
 
 > Full-featured React 19 storefront & admin dashboard for the E-Commerce Center platform. Covers the entire shopping experience — catalog browsing, variant selection, cart with coupons, 3-step checkout, and Stripe payment — alongside a rich admin console for products, inventory, orders, coupons, payments, and analytics.
 
+**Backend repo →** [ecommerce-platform-backend](https://github.com/MoathEssa/ecommerce-platform-backend)
+
 ---
 
 ## 1. Project Overview
