@@ -8,10 +8,16 @@
 
 ## 1. Project Overview
 
-E-Commerce Center Frontend is a single-page application that serves two distinct user experiences from one codebase:
+### The Business
+
+E-Commerce Center is a **multi-vendor dropshipping platform** that lets store operators run an online retail business without holding physical inventory. Operators import products from **CJ Dropshipping**, set retail pricing to capture margin, and the platform handles checkout, payments, inventory, promotions, and order management end-to-end.
+
+The frontend delivers the complete user-facing experience for both sides of the business:
 
 - **Customer Storefront** — home page, product listing with category/search/sort filters, product detail with image gallery and variant selector, cart with real-time coupon evaluation, a 3-step checkout (address → shipping → review), Stripe payment confirmation (3DS-capable), and order success.
 - **Admin Dashboard** — KPI overview with revenue charts, full CRUD for products/categories/variants (with drag-and-drop image reordering), inventory management with adjustment history, coupon builder with scope/limit configuration, payment monitoring with Stripe charge details, and admin-initiated refunds.
+
+### Technical Summary
 
 The app handles the hard frontend problems: **silent auth rehydration without route flicker**, **automatic 401 retry with cookie-based refresh**, **complex form orchestration across multi-step flows**, and **a generic data table with a visual query builder** that powers every admin list page.
 
@@ -140,21 +146,7 @@ src/
 
 ---
 
-## 5. Challenges & Solutions
-
-| Challenge                                        | Solution                                                                                                                                                                                                  |
-| ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Auth flicker on protected routes**             | `AuthGuard` shows a loading state while calling `/Auth/me`; children render only after the session resolves or fails. No flash of login page.                                                             |
-| **Silent token refresh without UX interruption** | RTK Query's `baseQuery` wrapper catches 401, refreshes via cookie-based endpoint, updates Redux auth state, and replays the failed request — all invisible to the user.                                   |
-| **Complex admin filters across many entities**   | A generic `QueryBuilder` component generates AND/OR filter trees; `DataTableV2` serializes these into API query parameters. Built once, used on every admin list.                                         |
-| **Multi-step checkout state continuity**         | A single orchestrating page component owns the step index and accumulated data (addresses, shipping selection, order summary). Each step is a focused sub-component that receives/reports data via props. |
-| **Image reordering UX**                          | `dnd-kit`'s sortable containers provide drag-and-drop with smooth animations; on drop, the new sort order is persisted via API call.                                                                      |
-| **RTL support without separate stylesheets**     | CSS logical properties (`margin-inline-start`, `padding-inline-end`) and Tailwind's RTL variant ensure layout flips correctly when the Arabic locale is active.                                           |
-| **Consistent dark mode across all components**   | `next-themes` detects system preference and exposes a class on `<html>`; Tailwind's dark variant applies globally; Radix primitives inherit the theme via CSS variables.                                  |
-
----
-
-## 6. Performance & Optimization
+## 5. Performance & Optimization
 
 - **RTK Query caching** — API responses are cached by endpoint + argument combination; navigating between admin pages reuses cached data instantly.
 - **Tag-based invalidation** — mutations invalidate only the affected tags, preventing full cache flushes and redundant network requests.
@@ -165,7 +157,7 @@ src/
 
 ---
 
-## 7. How to Run the Project
+## 6. How to Run the Project
 
 ### Prerequisites
 
@@ -212,13 +204,4 @@ npm run build    # outputs to dist/
 npm run preview  # serve the production build locally
 ```
 
----
 
-## 8. Future Improvements
-
-- **End-to-end tests** — Playwright tests covering the checkout → Stripe payment → order confirmation flow.
-- **Route-level code splitting** — further optimize initial load by lazy-loading admin feature modules on demand.
-- **PWA support** — service worker + manifest for offline catalog browsing and push notifications on order status updates.
-- **Real-time updates** — WebSocket/SSE integration for live inventory changes, order status transitions, and dashboard KPI refresh.
-- **Accessibility audit** — full WCAG 2.1 AA compliance pass across all storefront and admin flows.
-- **Advanced analytics** — customer behavior tracking (funnel drop-off, product view heatmaps) surfaced in the admin dashboard.
