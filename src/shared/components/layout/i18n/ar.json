@@ -1,0 +1,33 @@
+{
+    "sidebar": {
+        "groups": {
+            "main": "الرئيسية",
+            "store": "المتجر",
+            "management": "الإدارة"
+        },
+        "nav": {
+            "dashboard": "لوحة التحكم",
+            "catalog": "الكتالوج",
+            "categories": "الفئات",
+            "products": "المنتجات",
+            "categoriesList": "كل الفئات",
+            "categoriesManage": "إدارة الفئات",
+            "supplierCjCategories": "فئات CJ",
+            "supplierCjProducts": "منتجات CJ",
+            "cart": "سلة التسوق",
+            "checkout": "إتمام الشراء",
+            "payments": "المدفوعات",
+            "coupons": "الكوبونات",
+            "inventory": "المخزون",
+            "storefront": "واجهة المتجر"
+        },
+        "user": {
+            "logout": "تسجيل خروج",
+            "switchToArabic": "العربية",
+            "switchToEnglish": "English"
+        }
+    },
+    "header": {
+        "toggleSidebar": "تبديل الشريط الجانبي"
+    }
+}

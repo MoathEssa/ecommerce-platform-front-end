@@ -1,0 +1,33 @@
+{
+    "sidebar": {
+        "groups": {
+            "main": "Main",
+            "store": "Store",
+            "management": "Management"
+        },
+        "nav": {
+            "dashboard": "Dashboard",
+            "catalog": "Catalog",
+            "categories": "Categories",
+            "products": "Products",
+            "categoriesList": "All Categories",
+            "categoriesManage": "Manage Categories",
+            "supplierCjCategories": "CJ Categories",
+            "supplierCjProducts": "CJ Products",
+            "cart": "Cart",
+            "checkout": "Checkout",
+            "payments": "Payments",
+            "coupons": "Coupons",
+            "inventory": "Inventory",
+            "storefront": "Storefront"
+        },
+        "user": {
+            "logout": "Logout",
+            "switchToArabic": "العربية",
+            "switchToEnglish": "English"
+        }
+    },
+    "header": {
+        "toggleSidebar": "Toggle sidebar"
+    }
+}
