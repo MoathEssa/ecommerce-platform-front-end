@@ -1,0 +1,2 @@
+// Checkout feature — scaffold
+export {};

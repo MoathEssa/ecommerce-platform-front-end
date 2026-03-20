@@ -1,0 +1,120 @@
+/**
+ * QueryBuilder Shadcn Styles
+ * Custom styles to make react-querybuilder look like shadcn/ui
+ */
+
+@reference "../../../../../index.css";
+
+/* ============================================================================
+   CSS Variables
+   ============================================================================ */
+.data-table-query-builder {
+  --rqb-spacing: 0.5rem;
+}
+
+/* ============================================================================
+   Main Container
+   ============================================================================ */
+.data-table-query-builder .queryBuilder {
+  font-size: 0.875rem;
+}
+
+/* ============================================================================
+   Rule Group Container
+   ============================================================================ */
+.data-table-query-builder .ruleGroup {
+  @apply rounded-lg border bg-card p-3;
+}
+
+/* ============================================================================
+   Rule Group Header
+   ============================================================================ */
+.data-table-query-builder .ruleGroup-header {
+  @apply flex flex-wrap items-center gap-2 mb-3;
+}
+
+/* ============================================================================
+   Rule Group Body
+   ============================================================================ */
+.data-table-query-builder .ruleGroup-body {
+  @apply flex flex-col gap-2;
+}
+
+/* ============================================================================
+   Single Rule
+   ============================================================================ */
+.data-table-query-builder .rule {
+  @apply flex flex-wrap items-center gap-2 p-2 rounded-md bg-muted/30 hover:bg-muted/50 transition-colors;
+}
+
+/* ============================================================================
+   Combinator between rules
+   ============================================================================ */
+.data-table-query-builder .betweenRules {
+  @apply flex items-center py-1;
+}
+
+.data-table-query-builder .ruleGroup-combinators {
+  @apply inline-flex;
+}
+
+.data-table-query-builder .betweenRules .ruleGroup-combinators {
+  @apply px-2 py-0.5 rounded bg-muted/50 text-xs font-medium;
+}
+
+/* ============================================================================
+   Validation states
+   ============================================================================ */
+.data-table-query-builder .queryBuilder-invalid {
+  @apply border-destructive;
+}
+
+/* ============================================================================
+   Drag handle
+   ============================================================================ */
+.data-table-query-builder .queryBuilder-dragHandle {
+  @apply cursor-grab active:cursor-grabbing;
+}
+
+/* ============================================================================
+   Lock/unlock buttons
+   ============================================================================ */
+.data-table-query-builder .rule-lock,
+.data-table-query-builder .ruleGroup-lock {
+  @apply opacity-60 hover:opacity-100;
+}
+
+/* ============================================================================
+   Not toggle
+   ============================================================================ */
+.data-table-query-builder .ruleGroup-notToggle {
+  @apply flex items-center gap-1;
+}
+
+/* ============================================================================
+   Value source selector
+   ============================================================================ */
+.data-table-query-builder .rule-valueSource {
+  @apply text-xs text-muted-foreground;
+}
+
+/* ============================================================================
+   Actions alignment
+   ============================================================================ */
+.data-table-query-builder .rule-actions,
+.data-table-query-builder .ruleGroup-actions {
+  @apply flex items-center gap-1;
+}
+
+/* ============================================================================
+   Responsive adjustments
+   ============================================================================ */
+@media (max-width: 768px) {
+  .data-table-query-builder .rule {
+    @apply flex-col items-stretch gap-2;
+  }
+
+  .data-table-query-builder .rule-actions {
+    @apply justify-end;
+  }
+}
