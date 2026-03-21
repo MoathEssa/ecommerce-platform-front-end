@@ -2,7 +2,9 @@
 
 > Full-featured React 19 storefront & admin dashboard for the E-Commerce Center platform. Covers the entire shopping experience — catalog browsing, variant selection, cart with coupons, 3-step checkout, and Stripe payment — alongside a rich admin console for products, inventory, orders, coupons, payments, and analytics.
 
-**Backend repo →** [ecommerce-platform-backend](https://github.com/MoathEssa/ecommerce-platform-backend)
+🔗 **Live Demo** → [nice-forest-072cc5d0f.4.azurestaticapps.net](https://nice-forest-072cc5d0f.4.azurestaticapps.net)  
+🛠️ **Live API** → [ecommercecenter-api.azurewebsites.net/scalar/v1](https://ecommercecenter-api.azurewebsites.net/scalar/v1)  
+📦 **Backend repo** → [ecommerce-platform-backend](https://github.com/MoathEssa/ecommerce-platform-backend)
 
 ---
 
@@ -204,4 +206,30 @@ npm run build    # outputs to dist/
 npm run preview  # serve the production build locally
 ```
 
+---
 
+## 7. Deployment
+
+The frontend is deployed to **Azure Static Web Apps** with infrastructure defined as code and fully automated CI/CD.
+
+| Concern            | Tool                                        | Location                                    |
+| ------------------ | ------------------------------------------- | ------------------------------------------- |
+| **Infrastructure** | Azure Bicep                                 | `infra/main.bicep`, `infra/main.bicepparam` |
+| **CI/CD**          | GitHub Actions                              | `.github/workflows/deploy.yml`              |
+| **Hosting**        | Azure Static Web Apps (Free tier)           | Resource created by Bicep                   |
+| **Secrets**        | GitHub Actions Secrets → Build-time env     | No secrets in source control                |
+
+**How it works:**
+
+1. Push to `main` triggers the GitHub Actions workflow.
+2. The workflow installs dependencies and runs `npm run build` with all `VITE_*` environment variables injected from GitHub Secrets.
+3. Bicep deploys (or updates) the Static Web App resource.
+4. The `dist/` output is deployed to Azure Static Web Apps using the deployment token.
+
+SPA routing is handled via `staticwebapp.config.json` with a navigation fallback to `index.html`.
+
+---
+
+## 8. Version
+
+**v1.0.0** — First public portfolio release with full storefront experience, admin dashboard, Stripe payment integration, Google OAuth, Azure deployment, and CI/CD pipeline.
