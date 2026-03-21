@@ -343,8 +343,8 @@ export default function ProductsTable() {
       )}
 
       {/* Table */}
-      <div className="rounded-md border overflow-hidden">
-        <table className="w-full text-sm">
+      <div className="rounded-md border overflow-x-auto">
+        <table className="w-full min-w-[700px] text-sm">
           <thead className="bg-muted/50">
             {table.getHeaderGroups().map((hg) => (
               <tr key={hg.id}>
