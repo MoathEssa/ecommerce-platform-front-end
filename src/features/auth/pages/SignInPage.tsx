@@ -35,7 +35,7 @@ export default function SignInPage() {
 
   const form = useForm<SignInFormData>({
     resolver: zodResolver(signInSchema),
-    defaultValues: { email: "", password: "" },
+    defaultValues: { email: "moathhaimmour2003@gmail.com", password: "Moath2003" },
   });
 
   async function onSubmit(values: SignInFormData) {
@@ -56,6 +56,11 @@ export default function SignInPage() {
         </CardHeader>
 
         <CardContent className="space-y-5">
+          {/* Cold-start notice */}
+          <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-2.5 text-xs text-amber-700 dark:text-amber-400 leading-relaxed">
+            <span className="font-semibold">Demo note:</span> The database runs on a serverless plan and may be sleeping. If the first login attempt fails, please wait a few seconds and try again.
+          </div>
+
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               <FormField
