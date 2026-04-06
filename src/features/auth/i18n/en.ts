@@ -44,8 +44,28 @@ const authEn = {
     emailPlaceholder: "you@example.com",
     submitButton: "Send Reset Link",
     loadingButton: "Sending…",
-    successMessage: "Check your email for a reset link.",
+    successTitle: "Check Your Inbox",
+    successDescription:
+      "If an account with that email exists, a password reset link has been sent. Please check your inbox.",
     backToSignIn: "Back to sign in",
+  },
+  resetPassword: {
+    title: "Reset your password",
+    description: "Enter and confirm your new password below.",
+    passwordLabel: "New password",
+    passwordPlaceholder: "Enter new password",
+    confirmPasswordLabel: "Confirm new password",
+    confirmPasswordPlaceholder: "Repeat new password",
+    submitButton: "Reset Password",
+    loadingButton: "Resetting…",
+    successTitle: "Password Reset!",
+    successDescription:
+      "Your password has been reset successfully. You can now sign in with your new password.",
+    signInButton: "Go to Sign In",
+    backToSignIn: "Back to sign in",
+    invalidLink:
+      "This reset link is invalid or has expired. Please request a new one.",
+    requestNewLink: "Request a new link",
   },
   setPassword: {
     title: "Set new password",

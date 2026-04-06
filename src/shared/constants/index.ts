@@ -5,6 +5,7 @@ export const AUTH_ROUTES = {
   SIGN_IN: "/auth/sign-in",
   REGISTER: "/auth/register",
   FORGOT_PASSWORD: "/auth/forgot-password",
+  RESET_PASSWORD: "/auth/reset-password",
   SET_PASSWORD: "/auth/set-password",
   ACCOUNT_SETTINGS: "/auth/account-settings",
   FORBIDDEN: "/auth/forbidden",

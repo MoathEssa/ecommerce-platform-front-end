@@ -8,6 +8,7 @@ import {
   SignInPage,
   RegisterPage,
   ForgotPasswordPage,
+  ResetPasswordPage,
   SetPasswordPage,
   ForbiddenPage,
 } from "@features/auth";
@@ -43,6 +44,7 @@ const router = createBrowserRouter([
       { path: "/auth/sign-in", element: <SignInPage /> },
       { path: "/auth/register", element: <RegisterPage /> },
       { path: "/auth/forgot-password", element: <ForgotPasswordPage /> },
+      { path: "/auth/reset-password", element: <ResetPasswordPage /> },
       { path: "/auth/set-password", element: <SetPasswordPage /> },
     ],
   },
